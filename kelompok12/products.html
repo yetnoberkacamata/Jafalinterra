@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product - JAFALINTERRA</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Import font Rajdhani + Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>JAFALINTERRA</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Product</a>
+      <a href="javascript:void(0)" onclick="toggleContact()">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="products" id="product-section">
+      <!-- Produk akan dimuat lewat JavaScript -->
+    </section>
+  </main>
+
+  <!-- Contact Box pojok kanan bawah -->
+  <div id="contact-box" class="contact-box">
+    <h3>Hubungi Kami</h3>
+    <p><strong>WhatsApp:</strong> 
+      <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a>
+    </p>
+    <p><strong>Instagram:</strong> 
+      <a href="https://instagram.com/brand_Jafalinterra" target="_blank">@brand_Jafalinterra</a>
+    </p>
+  </div>
+
+  <script>
+    // data produk sama seperti sebelumnya ...
+    const products = [
+      { id: "8991389307380", name: "Jafalinterra Hoodie", price: 120, image: "hoodie.jpeg", detail: "Hoodie premium berbahan fleece tebal..." },
+      { id: "102", name: "Jafalinterra Sweatpants", price: 90, image: "sweatpants.jpeg", detail: "Sweatpants berbahan katun lembut..." },
+      { id: "103", name: "Jafalinterra T-Shirt", price: 60, image: "t shirt.jpeg", detail: "Kaos katun premium..." },
+      { id: "104", name: "Jafalinterra Jacket", price: 150, image: "jacket.jpeg", detail: "Jaket ringan berbahan tahan angin..." },
+      { id: "105", name: "Jafalinterra Shorts", price: 70, image: "short pants.jpeg", detail: "Shorts berbahan katun ringan..." },
+      { id: "106", name: "Jafalinterra Cap", price: 40, image: "cap.jpeg", detail: "Topi dengan desain minimalis Essentials..." }
+    ];
+
+    const code = localStorage.getItem("barcodeId");
+    const product = products.find(p => p.id === code);
+    const section = document.getElementById("product-section");
+
+    if(product){
+      section.innerHTML = `
+        <div class="product">
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p class="price">$${product.price}</p>
+          <p class="desc">${product.detail}</p>
+          <svg id="barcode"></svg>
+        </div>
+      `;
+      JsBarcode("#barcode", product.id, { format: "CODE128", displayValue: true, fontSize: 12, width: 1, height: 50 });
+    } else {
+      section.innerHTML = `
+        <div>
+          ${products.map(p => `
+            <div class="product">
+              <img src="${p.image}" alt="${p.name}">
+              <h3>${p.name}</h3>
+              <p class="price">$${p.price}</p>
+              <p class="desc">${p.detail}</p>
+              <svg id="barcode-${p.id}"></svg>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      products.forEach(p => {
+        JsBarcode(`#barcode-${p.id}`, p.id, { format: "CODE128", displayValue: true, fontSize: 12, width: 1, height: 40 });
+      });
+    }
+
+    // Contact toggle
+    function toggleContact(){
+      const box = document.getElementById("contact-box");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
