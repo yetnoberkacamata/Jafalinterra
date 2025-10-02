@@ -1,0 +1,271 @@
+/* ===== Import Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* ===== Global ===== */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Heading, Nav & Buttons pakai Rajdhani */
+h1, h2, h3, header h1, nav a, .btn {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Nav di tengah */
+header nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #555;
+}
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background: #e0e0e0;
+  color: #111;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ===== Controls ===== */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.controls input,
+.controls select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 0.6rem 1.2rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.25s ease;
+}
+
+.btn:hover {
+  background: #444;
+}
+
+/* ===== Produk Grid (Home) ===== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.product img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.product h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #111;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.product p {
+  font-size: 1rem;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== Modal (produk detail di home) ===== */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  width: 70%;
+  max-width: 320px;
+  border-radius: 16px;
+  position: relative;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.product svg {
+  max-width: 120px;
+  margin: 0.5rem auto 0;
+  display: block;
+}
+
+/* ===== Contact Box pojok kanan bawah ===== */
+.contact-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  display: none; /* awalnya sembunyi */
+  z-index: 1200;
+  font-family: 'Inter', sans-serif;
+  animation: slideUp 0.3s ease;
+}
+
+.contact-box h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.contact-box a {
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  color: #555;
+}
+
+/* Animasi popup contact */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Produk di halaman detail (barang.html) ===== */
+#product-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center; /* konten rata tengah */
+}
+
+#product-section .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* isi konten rata tengah */
+  text-align: center;
+}
+
+#product-section .product img {
+  width: 100%;
+  max-width: 500px; /* gambar lebih besar */
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+#product-section .product h3 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+#product-section .product .price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #222;
+}
+
+#product-section .product .desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 700px;
+  margin: 1rem auto;
+}

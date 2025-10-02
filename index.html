@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jafalinterra - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>JAFALINTERRA</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Product</a>
+    </nav>
+    <button class="btn" onclick="openContact()">Contact</button>
+  </header>
+
+  <section class="hero">
+    <h2>JAFALINTERRA COLLECTION</h2>
+    <p>Premium streetwear by Jafalinterra</p>
+  </section>
+
+  <section class="controls">
+    <input type="text" id="search" placeholder="Search product...">
+  </section>
+
+  <main>
+    <section id="products" class="products">
+      <!-- Produk dimuat via JS -->
+    </section>
+  </main>
+
+  <!-- Modal produk -->
+  <div id="modal" class="modal">
+    <div id="modal-body" class="modal-content"></div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeContact()">&times;</span>
+      <h3>Hubungi Kami</h3>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/brand_Jafalinterra" target="_blank">@brand_Jafalinterra</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

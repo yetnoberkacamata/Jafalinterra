@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login with Barcode - Jafalinterra</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Import font Rajdhani + Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Styling khusus halaman login */
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .login-container p {
+      margin-bottom: 20px;
+      color: #333;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    .login-container input:focus {
+      border-color: #666;
+    }
+
+    #error-msg {
+      color: #d9534f;
+      margin-top: 10px;
+      display: none;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JAFALINTERRA</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="barang.html" class="active">Procuct</a>
+    </nav>
+    <button class="btn" onclick="toggleContact()">Contact</button>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <h2>Login dengan Barcode</h2>
+      <p>Scan atau ketik barcode produk untuk masuk ke Product</p>
+      <form id="barcodeForm">
+        <input type="text" id="barcodeInput" placeholder="Scan Barcode di sini..." autofocus />
+        <button type="submit" class="btn">Masuk</button>
+      </form>
+      <p id="error-msg">⚠️ Barcode tidak valid!</p>
+    </div>
+  </main>
+
+  <!-- Contact Box pojok kanan bawah -->
+  <div id="contact-box" class="contact-box">
+    <h3>Hubungi Kami</h3>
+    <p><strong>WhatsApp:</strong> 
+      <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a>
+    </p>
+    <p><strong>Instagram:</strong> 
+      <a href="https://instagram.com/brand_Jafalinterra" target="_blank">@brand_Jafalinterra</a>
+    </p>
+  </div>
+
+  <script>
+    // daftar produk
+    const products = [
+      { id: "8991389307380", name: "Jafalinterra Hoodie" },
+      { id: "102", name: "Jafalinterra Sweatpants" },
+      { id: "103", name: "Jafalinterra T-Shirt" },
+      { id: "104", name: "Jafalinterra Jacket" },
+      { id: "105", name: "Jafalinterra Shorts" },
+      { id: "106", name: "Jafalinterra Cap" }
+    ];
+
+    document.getElementById("barcodeForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const code = document.getElementById("barcodeInput").value.trim();
+      const product = products.find(p => p.id === code);
+
+      if(product){
+        localStorage.setItem("shopLogin", "true");
+        localStorage.setItem("barcodeId", code);
+        window.location.href = "products.html";
+      } else {
+        document.getElementById("error-msg").style.display = "block";
+        document.getElementById("barcodeInput").value = "";
+      }
+    });
+
+    document.getElementById("barcodeInput").addEventListener("keypress", function(e){
+      if(e.key === "Enter"){
+        e.preventDefault();
+        document.getElementById("barcodeForm").dispatchEvent(new Event("submit"));
+      }
+    });
+
+    // Contact box toggle
+    function toggleContact(){
+      const box = document.getElementById("contact-box");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
