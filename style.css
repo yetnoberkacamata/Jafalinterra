@@ -154,14 +154,24 @@ nav a.active {
 .modal-content {
   background: #fff;
   padding: 1.5rem;
-  width: 70%;
-  max-width: 320px;
+  width: 90%;
+  max-width: 600px; /* lebih besar untuk detail produk */
   border-radius: 16px;
   position: relative;
   transform: scale(0.8);
   opacity: 0;
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  max-width: 400px; /* gambar produk lebih besar */
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 12px;
 }
 
 .modal.show .modal-content {
@@ -269,3 +279,43 @@ nav a.active {
   max-width: 700px;
   margin: 1rem auto;
 }
+
+/* ===== Responsive Navbar ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav {
+    position: static;
+    transform: none;
+    margin-top: 0.5rem;
+    gap: 1rem;
+  }
+
+  header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+  }
+}
+/* ===== Responsive Navbar ===== */
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header nav {
+      position: static;
+      transform: none;
+      margin-top: 0.5rem;
+      gap: 1rem;
+    }
+  
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem; /* agak kecil di hp */
+    }
+  }
+  

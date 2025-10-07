@@ -3,44 +3,44 @@ const products = [
     { 
       id: "8991389307380", 
       name: "Jafalinterra  Hoodie", 
-      price: 120, 
+      price: 21, 
       image: "hoodie.jpeg", 
-      detail: "Hoodie premium berbahan fleece tebal dengan potongan oversized khas Fear of God Essentials. Nyaman dipakai sehari-hari maupun untuk gaya streetwear."
+      detail: "Hoodie premium berbahan fleece tebal dengan potongan oversized khas Jafalinterra. Nyaman dipakai sehari-hari maupun untuk gaya streetwear."
     },
     { 
       id: "102", 
       name: "sweatpants.jpeg", 
-      price: 90, 
+      price: 12, 
       image: "sweatpants.jpeg", 
-      detail: "Sweatpants berbahan katun lembut dengan karet elastis dan logo Essentials. Memberikan kenyamanan maksimal untuk bersantai ataupun olahraga ringan."
+      detail: "Sweatpants berbahan katun lembut dengan karet elastis dan logo Jafalinterra. Memberikan kenyamanan maksimal untuk bersantai ataupun olahraga ringan."
     },
     { 
       id: "103", 
       name: "Jafalinterra  T-Shirt", 
-      price: 60, 
+      price: 9, 
       image: "t shirt.jpeg", 
-      detail: "Kaos katun premium dengan tekstur lembut, potongan relaxed fit, serta logo minimalis Essentials. Ideal dipadukan dengan berbagai outfit kasual."
+      detail: "Kaos katun premium dengan tekstur lembut, potongan relaxed fit, serta logo minimalis Jafalinterra. Ideal dipadukan dengan berbagai outfit kasual."
     },
     { 
       id: "104", 
       name: "Jafalinterra  Jacket", 
-      price: 150, 
+      price: 25, 
       image: "jacket.jpeg", 
       detail: "Jaket ringan berbahan tahan angin dengan desain modern. Memberikan tampilan stylish sekaligus fungsional di segala suasana."
     },
     { 
       id: "105", 
       name: "Jafalinterra  Shorts", 
-      price: 70, 
+      price: 8, 
       image: "short pants.jpeg", 
       detail: "Shorts berbahan katun ringan dengan potongan relaxed fit. Ideal untuk musim panas atau aktivitas santai."
     },
     { 
       id: "106", 
       name: "Jafalinterra  Cap", 
-      price: 40, 
+      price: 7, 
       image: "cap.jpeg", 
-      detail: "Topi dengan desain minimalis Essentials. Material ringan dan breathable, cocok melengkapi gaya kasual harian."
+      detail: "Topi dengan desain minimalis Jafalinterra. Material ringan dan breathable, cocok melengkapi gaya kasual harian."
     }
   ];
   

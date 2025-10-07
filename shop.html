@@ -64,9 +64,9 @@
     <h1>JAFALINTERRA</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="barang.html" class="active">Procuct</a>
+      <a href="shop.html" class="active">Product</a>
+      <a href="javascript:void(0)" onclick="toggleContact()">Contact</a>
     </nav>
-    <button class="btn" onclick="toggleContact()">Contact</button>
   </header>
 
   <main>
@@ -93,7 +93,6 @@
   </div>
 
   <script>
-    // daftar produk
     const products = [
       { id: "8991389307380", name: "Jafalinterra Hoodie" },
       { id: "102", name: "Jafalinterra Sweatpants" },
@@ -125,7 +124,7 @@
       }
     });
 
-    // Contact box toggle
+    // Contact toggle
     function toggleContact(){
       const box = document.getElementById("contact-box");
       box.style.display = (box.style.display === "block") ? "none" : "block";
