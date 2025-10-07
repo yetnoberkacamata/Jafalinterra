@@ -1,42 +1,42 @@
 // ====== Data Produk ======
 const products = [
     { 
-      id: "8991389307380", 
+      id: "6183519625", 
       name: "Jafalinterra  Hoodie", 
       price: 21, 
       image: "hoodie.jpeg", 
       detail: "Hoodie premium berbahan fleece tebal dengan potongan oversized khas Jafalinterra. Nyaman dipakai sehari-hari maupun untuk gaya streetwear."
     },
     { 
-      id: "102", 
+      id: "6143936292", 
       name: "sweatpants.jpeg", 
       price: 12, 
       image: "sweatpants.jpeg", 
       detail: "Sweatpants berbahan katun lembut dengan karet elastis dan logo Jafalinterra. Memberikan kenyamanan maksimal untuk bersantai ataupun olahraga ringan."
     },
     { 
-      id: "103", 
+      id: "6152936292", 
       name: "Jafalinterra  T-Shirt", 
       price: 9, 
       image: "t shirt.jpeg", 
       detail: "Kaos katun premium dengan tekstur lembut, potongan relaxed fit, serta logo minimalis Jafalinterra. Ideal dipadukan dengan berbagai outfit kasual."
     },
     { 
-      id: "104", 
+      id: "6152930162", 
       name: "Jafalinterra  Jacket", 
       price: 25, 
       image: "jacket.jpeg", 
       detail: "Jaket ringan berbahan tahan angin dengan desain modern. Memberikan tampilan stylish sekaligus fungsional di segala suasana."
     },
     { 
-      id: "105", 
+      id: "6108308451", 
       name: "Jafalinterra  Shorts", 
       price: 8, 
       image: "short pants.jpeg", 
       detail: "Shorts berbahan katun ringan dengan potongan relaxed fit. Ideal untuk musim panas atau aktivitas santai."
     },
     { 
-      id: "106", 
+      id: "6103615490", 
       name: "Jafalinterra  Cap", 
       price: 7, 
       image: "cap.jpeg", 
